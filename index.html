@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=1200, initial-scale=0.3">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Harish Kumar | Graphic Designer | Print, Digital & Branding</title>
 <meta name="description" content="Harish Kumar — Graphic Designer specializing in Print, Digital & Branding. Open to opportunities in India and Dubai.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -71,6 +71,20 @@
   nav.links a:hover{color:#fff;}
   .nav-actions{display:flex; align-items:center; gap:.6rem;}
 
+  .menu-btn{
+    display:none; background:transparent; border:none; color:#fff; font-size:1.3rem;
+    cursor:pointer; padding:0.4rem; z-index:101;
+  }
+
+  .mobile-menu{
+    display:none; position:fixed; top:75px; left:6vw; right:6vw;
+    background:rgba(15,15,23,0.95); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px);
+    border:1px solid var(--border); border-radius:18px; padding:1.5rem;
+    flex-direction:column; gap:1.2rem; text-align:center; z-index:99;
+  }
+  .mobile-menu.open{ display:flex; }
+  .mobile-menu a{ font-size:1.05rem; font-weight:600; text-transform:uppercase; color:var(--fg); letter-spacing:.05em; }
+
   /* BUTTONS */
   .btn{
     position:relative; display:inline-flex; align-items:center; gap:.55rem;
@@ -109,7 +123,7 @@
   .dot::after{content:''; position:absolute; inset:-5px; border-radius:50%; border:1px solid var(--cyan); animation:pulse 2s infinite;}
   @keyframes pulse{0%{transform:scale(.6); opacity:1;} 100%{transform:scale(2); opacity:0;}}
 
-  /* FLOATING SOCIAL DOCK */
+  /* FLOATING VERTICAL SOCIAL DOCK */
   .social-dock{
     position:absolute; right:2.4vw; top:50%; transform:translateY(-50%);
     display:flex; flex-direction:column; gap:.7rem; padding:.9rem .6rem; z-index:20;
@@ -124,7 +138,6 @@
     border-color:rgba(124,92,255,.6);
     background:rgba(124,92,255,.12);
   }
-  @media (max-width:960px){ .social-dock{ display:none; } }
 
   section{ padding:8rem 0; position:relative; }
   .grid-12{display:grid; grid-template-columns:repeat(12,1fr); gap:2.2rem;}
@@ -260,8 +273,10 @@
   .reveal{opacity:0; transform:translateY(24px); transition:opacity .8s ease, transform .8s cubic-bezier(.2,.8,.2,1);}
   .reveal.in{opacity:1; transform:translateY(0);}
 
+  /* RESPONSIVE CSS */
   @media (max-width:860px){
     nav.links{display:none;}
+    .menu-btn{display:block;}
     .work-grid{grid-template-columns:1fr;}
     .services-grid{grid-template-columns:1fr;}
     .process-grid{grid-template-columns:repeat(2,1fr); row-gap:2rem;}
@@ -271,6 +286,27 @@
     section{padding:5rem 0;}
     header{top:10px;}
     .nav-actions .btn-cv span.label-full{display:none;}
+    
+    /* Mobile Social Dock Adjustment */
+    .social-dock{
+      right:1.2vw;
+      padding:.6rem .4rem;
+      gap:.5rem;
+    }
+    .social-dock a{
+      width:36px;
+      height:36px;
+      font-size:.9rem;
+    }
+  }
+
+  @media (max-width:480px){
+    .process-grid{grid-template-columns:1fr;}
+    .why-grid{grid-template-columns:1fr;}
+    .hero h1{font-size:2.8rem;}
+    .hero .role{font-size:1.05rem;}
+    .cta-row{flex-direction:column; align-items:stretch;}
+    .cta-row .btn{justify-content:center;}
   }
 </style>
 </head>
@@ -296,7 +332,17 @@
     <div class="nav-actions">
       <a href="resume.pdf" download class="btn btn-cv small magnetic"><i class="fas fa-file-pdf"></i> <span class="label-full">Download CV</span></a>
       <a href="#contact" class="btn btn-primary magnetic">Get In Touch</a>
+      <button class="menu-btn" id="menuToggle" aria-label="Toggle Menu"><i class="fa-solid fa-bars"></i></button>
     </div>
+  </div>
+  
+  <!-- Mobile Dropdown Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#about" class="mob-link">About</a>
+    <a href="#work" class="mob-link">Work</a>
+    <a href="#services" class="mob-link">Services</a>
+    <a href="#skills" class="mob-link">Skills</a>
+    <a href="#contact" class="mob-link">Contact</a>
   </div>
 </header>
 
@@ -587,6 +633,32 @@
 </footer>
 
 <script>
+  // Mobile Hamburger Toggle
+  const menuToggle = document.getElementById('menuToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const mobLinks = document.querySelectorAll('.mob-link');
+
+  menuToggle.addEventListener('click', () => {
+    mobileMenu.classList.toggle('open');
+    const icon = menuToggle.querySelector('i');
+    if (mobileMenu.classList.contains('open')) {
+      icon.classList.remove('fa-bars');
+      icon.classList.add('fa-xmark');
+    } else {
+      icon.classList.remove('fa-xmark');
+      icon.classList.add('fa-bars');
+    }
+  });
+
+  mobLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      const icon = menuToggle.querySelector('i');
+      icon.classList.remove('fa-xmark');
+      icon.classList.add('fa-bars');
+    });
+  });
+
   // scroll reveal
   const revealEls = document.querySelectorAll('.reveal');
   const io = new IntersectionObserver((entries)=>{
