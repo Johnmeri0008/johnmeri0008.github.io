@@ -58,7 +58,7 @@
   .eyebrow{ font-size:.72rem; letter-spacing:.22em; text-transform:uppercase; font-weight:600; margin-bottom:1.1rem; display:inline-block; }
   .eyebrow.c-violet{color:var(--violet);} .eyebrow.c-cyan{color:var(--cyan);} .eyebrow.c-orange{color:var(--orange);}
 
-  /* NAV (PERFECT 3-COLUMN ALIGNMENT) */
+  /* NAV (Laptop Style Default) */
   header{ position:fixed; top:16px; left:0; right:0; z-index:100; padding:0 3vw; }
   header .navbar{
     max-width:1180px; margin:0 auto; display:flex; align-items:center; justify-content:space-between;
@@ -109,594 +109,129 @@
     text-transform:uppercase; color:#fff; padding:.6rem 1.2rem 0.6rem .8rem;
   }
   .dot{width:8px; height:8px; border-radius:50%; background:var(--cyan); position:relative; box-shadow:0 0 12px var(--cyan);}
-  .dot::after{content:''; position:absolute; inset:-5px; border-radius:50%; border:1px solid var(--cyan); animation:pulse 2s infinite;}
-  @keyframes pulse{0%{transform:scale(.6); opacity:1;} 100%{transform:scale(2); opacity:0;}}
+  .dot::after{content:''; position:absolute; inset:-உங்கள் தேவையை சரியாகப் புரிந்து கொண்டேன். லோகோவிற்கு (HK) பக்கத்திலேயே இடைவெளி அதிகம் இல்லாமல் நெருக்கமாக மெனு உருப்படிகள், பட்டன்கள் அனைத்தும் ஒரே வரியில் ஸ்கிரீனுக்குள் அழகாகப் பொருந்தும் வகையில் (Responsive Navbar) கீழ்கண்ட HTML & CSS அமைப்பைப் பயன்படுத்தலாம்.
 
-  /* FLOATING VERTICAL SOCIAL DOCK */
-  .social-dock{
-    position:absolute; right:2.4vw; top:50%; transform:translateY(-50%);
-    display:flex; flex-direction:column; gap:.7rem; padding:.9rem .6rem; z-index:20;
-  }
-  .social-dock a{
-    width:44px; height:44px; border-radius:50%; display:flex; align-items:center; justify-content:center;
-    color:#fff; font-size:1.05rem; transition:transform .3s cubic-bezier(.2,.8,.2,1), box-shadow .3s, border-color .3s, background .3s;
-  }
-  .social-dock a:hover{
-    transform:translateX(-10px) scale(1.08);
-    box-shadow:0 0 22px rgba(124,92,255,.55), 0 0 0 1px rgba(124,92,255,.4) inset;
-    border-color:rgba(124,92,255,.6);
-    background:rgba(124,92,255,.12);
-  }
-
-  section{ padding:8rem 0; position:relative; }
-  .grid-12{display:grid; grid-template-columns:repeat(12,1fr); gap:2.2rem;}
-  .section-head{ display:flex; justify-content:space-between; align-items:flex-end; gap:2rem; margin-bottom:4rem; flex-wrap:wrap;}
-  .section-head h2{font-size:clamp(1.8rem,4vw,2.8rem); font-weight:700;}
-  .section-head p{color:var(--fg-dim); max-width:340px;}
-
-  /* ABOUT */
-  .about-copy{grid-column:span 8; color:var(--fg-dim); font-size:1.08rem;}
-  .about-copy p{margin-bottom:1.4rem;}
-  .about-side{grid-column:span 4; display:flex; flex-direction:column; gap:1rem;}
-  .info-card{ padding:1.4rem; transition:transform .35s, box-shadow .35s; }
-  .info-card:hover{ transform:translateY(-3px); box-shadow:0 0 0 1px rgba(124,92,255,.35), 0 18px 34px -18px rgba(124,92,255,.4); }
-  .info-card .label{font-size:.7rem; letter-spacing:.15em; text-transform:uppercase; color:var(--fg-dim); margin-bottom:.35rem;}
-  .info-card .value{font-weight:600;}
-
-  /* WORK */
-  .work-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:1.6rem; }
-  .project-card{ overflow:hidden; transition:transform .45s cubic-bezier(.2,.8,.2,1), box-shadow .45s; }
-  .project-card:hover{ transform:translateY(-8px); box-shadow:0 24px 60px -24px rgba(124,92,255,.4); }
-  .project-visual{
-    aspect-ratio:4/3; margin:14px; border-radius:16px; position:relative; overflow:hidden;
-    display:flex; align-items:center; justify-content:center;
-  }
-  .project-visual::before{ content:''; position:absolute; inset:0; background:linear-gradient(160deg, rgba(255,255,255,.1), rgba(0,0,0,.3)); }
-  .project-visual span{ font-family:'Syne'; font-weight:700; font-size:1.6rem; letter-spacing:-.02em; color:#fff; position:relative; z-index:1;}
-  .project-body{ padding:.4rem 1.6rem 1.8rem;}
-  .concept-tag{ font-size:.68rem; letter-spacing:.14em; text-transform:uppercase; color:var(--cyan); font-weight:600; display:block; margin-bottom:.6rem;}
-  .project-body h3{font-size:1.25rem; margin-bottom:.5rem;}
-  .project-body p{color:var(--fg-dim); font-size:.92rem;}
-  .tools{font-size:.72rem; letter-spacing:.08em; text-transform:uppercase; color:var(--fg-dim); opacity:.6; margin-bottom:1rem;}
-  .view-link{ font-size:.8rem; font-weight:600; display:inline-flex; align-items:center; gap:.4rem; color:#fff;}
-  .view-link .arrow{transition:transform .3s;}
-  .project-card:hover .view-link .arrow{transform:translateX(5px);}
-
-  /* SERVICES */
-  .services-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:1.6rem;}
-  .service-card{ padding:2.3rem; transition:transform .4s cubic-bezier(.2,.8,.2,1), box-shadow .4s, border-color .4s; }
-  .service-card:hover{ transform:translateY(-6px); box-shadow:0 24px 50px -22px rgba(49,231,224,.35); border-color:rgba(49,231,224,.4); }
-  .service-icon{
-    width:52px; height:52px; border-radius:14px; display:flex; align-items:center; justify-content:center;
-    background:linear-gradient(135deg, rgba(124,92,255,.25), rgba(49,231,224,.2)); margin-bottom:1.4rem; font-size:1.2rem;
-  }
-  .service-card h3{font-size:1.35rem; margin-bottom:.8rem;}
-  .service-card p{color:var(--fg-dim); font-size:.92rem;}
-
-  /* SKILLS */
-  .skill-row{ display:flex; justify-content:space-between; align-items:center; padding:1rem 0; border-bottom:1px solid var(--border);}
-  .skill-row:last-child{border-bottom:none;}
-  .bar-wrap{display:flex; align-items:center; gap:.7rem;}
-  .bar{width:130px; height:5px; background:rgba(255,255,255,.08); border-radius:99px; overflow:hidden;}
-  .bar span{display:block; height:100%; width:0%; background:linear-gradient(90deg,var(--violet),var(--cyan)); transition:width 1.4s cubic-bezier(.2,.8,.2,1);}
-  .bar-pct{ font-family:'Syne'; font-size:.78rem; font-weight:600; color:var(--fg-dim); width:2.4rem; text-align:right; }
-  .pill-list{display:flex; flex-wrap:wrap; gap:.7rem;}
-  .pill-list span{ padding:.6rem 1.1rem; border-radius:999px; font-size:.85rem; color:var(--fg-dim); transition:.3s;}
-  .pill-list span:hover{border-color:rgba(255,107,58,.5); color:#fff;}
-
-  /* TOOL TICKER */
-  .ticker-wrap{
-    margin-top:3.4rem; overflow:hidden; position:relative; padding:1.6rem 0;
-    -webkit-mask-image:linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
-    mask-image:linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
-  }
-  .ticker-track{ display:flex; width:max-content; gap:1.2rem; animation:tickerScroll 26s linear infinite; }
-  .ticker-wrap:hover .ticker-track{ animation-play-state:paused; }
-  @keyframes tickerScroll{ from{transform:translateX(0);} to{transform:translateX(-50%);} }
-  .tool-chip{
-    display:flex; align-items:center; gap:.7rem; padding:.8rem 1.3rem; border-radius:14px; white-space:nowrap;
-  }
-  .tool-icon{
-    width:34px; height:34px; border-radius:9px; display:flex; align-items:center; justify-content:center;
-    font-family:'Syne'; font-weight:700; font-size:.78rem; color:#0a0a0f; flex-shrink:0;
-  }
-  .tool-chip span.tname{font-size:.86rem; color:var(--fg);}
-
-  /* PROCESS + WHY */
-  .ripple-grid{ display:grid; gap:1.6rem; }
-  .process-grid{ grid-template-columns:repeat(5,1fr); }
-  .why-grid{ grid-template-columns:repeat(5,1fr); }
-  .ripple-card{
-    padding:1.5rem; --r:0;
-    transform:translateY(calc(var(--r) * -8px)) scale(calc(1 + var(--r) * 0.02));
-    box-shadow:0 calc(var(--r) * 26px) calc(var(--r) * 50px) calc(var(--r) * -20px) rgba(124,92,255, calc(var(--r) * 0.55));
-    border-color:rgba(124,92,255, calc(0.1 + var(--r) * 0.5));
-    transition:transform .5s cubic-bezier(.2,.8,.2,1), box-shadow .5s, border-color .5s;
-  }
-  .process-step .num{font-family:'Syne'; font-size:1.4rem; font-weight:700; margin-bottom:1rem;
-    background:linear-gradient(100deg,var(--violet),var(--orange)); -webkit-background-clip:text; background-clip:text; color:transparent;}
-  .process-step h3{font-size:1.05rem; margin-bottom:.5rem;}
-  .process-step p{color:var(--fg-dim); font-size:.85rem;}
-  .why-card h3{font-size:1rem; margin-bottom:.5rem;}
-  .why-card p{color:var(--fg-dim); font-size:.83rem;}
-
-  /* FAQ */
-  details{ padding:1.3rem 1.5rem; margin-bottom:.9rem; }
-  summary{ list-style:none; cursor:pointer; display:flex; justify-content:space-between; align-items:center; font-weight:600;}
-  summary::-webkit-details-marker{display:none;}
-  .plus{ font-family:'Syne'; color:var(--orange); transition:transform .3s; font-size:1.2rem;}
-  details[open] .plus{transform:rotate(45deg);}
-  details p{color:var(--fg-dim); margin-top:.9rem; font-size:.92rem;}
-
-  /* CONTACT */
-  .contact-grid{display:grid; grid-template-columns:1fr 1.2fr; gap:2.4rem;}
-  .badge-row{display:flex; flex-direction:column; gap:.8rem; margin-top:1.6rem;}
-  .badge{ display:flex; align-items:center; gap:1rem; padding:.95rem 1.2rem; transition:.35s; }
-  .badge:hover{ transform:translateX(8px); border-color:rgba(124,92,255,.5); box-shadow:0 10px 30px -16px rgba(124,92,255,.5); }
-  .badge .icon{
-    width:42px; height:42px; border-radius:12px; display:flex; align-items:center; justify-content:center; flex-shrink:0;
-    background:linear-gradient(135deg, rgba(124,92,255,.3), rgba(49,231,224,.2)); font-size:1.05rem; color:#fff;
-  }
-  .badge .meta .label{font-size:.7rem; text-transform:uppercase; letter-spacing:.1em; color:var(--fg-dim);}
-  .badge .meta .value{font-weight:600; font-size:.92rem;}
-
-  .contact-form{ padding:2rem; }
-  .form-field{margin-bottom:1.1rem;}
-  .form-field label{display:block; font-size:.72rem; letter-spacing:.12em; text-transform:uppercase; color:var(--fg-dim); margin-bottom:.5rem;}
-  .form-field input, .form-field textarea{
-    width:100%; background:rgba(255,255,255,.04); border:1px solid var(--border); border-radius:12px; padding:.9rem 1.1rem;
-    color:#fff; font-family:inherit; font-size:.95rem; transition:.3s;
-  }
-  .form-field input:focus, .form-field textarea:focus{ outline:none; border-color:var(--cyan); box-shadow:0 0 0 3px rgba(49,231,224,.15); }
-
-  footer{ padding:3rem 0; }
-  footer .wrap{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;}
-  footer .fname{font-family:'Syne'; font-weight:700;}
-  footer .sub{color:var(--fg-dim); font-size:.8rem;}
-  .foot-social{display:flex; gap:.8rem;}
-  .foot-social a{
-    width:38px; height:38px; border-radius:11px; display:flex; align-items:center; justify-content:center; transition:.3s; color:#fff;
-  }
-  .foot-social a:hover{ transform:translateY(-3px); border-color:rgba(124,92,255,.5); }
-
-  .reveal{opacity:0; transform:translateY(24px); transition:opacity .8s ease, transform .8s cubic-bezier(.2,.8,.2,1);}
-  .reveal.in{opacity:1; transform:translateY(0);}
-
-  /* MOBILE SPECIFIC SINGLE LINE FIT */
-  @media (max-width:860px){
-    header{ top:8px; padding:0 2vw; }
-    header .navbar{
-      padding:.45rem .6rem;
-      gap:.3rem;
-    }
-    
-    .logo{
-      font-size:.88rem;
+```html
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navigation Bar</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
     }
 
-    nav.links{
-      gap:.35rem;
-      font-size:.56rem;
-      font-weight:700;
-      letter-spacing:.02em;
-    }
-    nav.links a{
-      padding:2px 2px;
-      color:var(--fg);
-    }
-
-    .nav-actions{
-      gap:.25rem;
-    }
-    .nav-actions .btn-primary{
-      padding:.42rem .65rem;
-      font-size:.62rem;
-    }
-    .nav-actions .btn-cv{
-      padding:.42rem .5rem;
-      font-size:.65rem;
-    }
-    .nav-actions .btn-cv span.label-full{ display:none; }
-
-    /* HERO ADJUSTMENT */
-    .hero{ padding-top:90px; }
-    .hero .wrap{ padding-right:3.2rem; }
-    .hero h1{ font-size:clamp(2.2rem, 9.5vw, 3.4rem); }
-    .hero .role{ font-size:1rem; }
-    .hero p.lede{ font-size:.88rem; margin:1rem 0 1.5rem; }
-    .cta-row{ gap:.7rem; margin-bottom:1.8rem; }
-    .cta-row .btn{ padding:.75rem 1.2rem; font-size:.78rem; width:100%; justify-content:center; }
-
-    /* SIDE DOCK */
-    .social-dock{
-      right:4px;
-      padding:.45rem .25rem;
-      gap:.4rem;
-      border-radius:12px;
-    }
-    .social-dock a{
-      width:28px;
-      height:28px;
-      font-size:.75rem;
+    /* பிரதான நேவிகேஷன் பார் */
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #1a1a1a;
+      padding: 10px 20px;
+      color: #ffffff;
+      flex-wrap: nowrap;
+      overflow-x: auto;
     }
 
-    .work-grid, .services-grid, .process-grid, .why-grid, .contact-grid{ grid-template-columns:1fr; }
-    .about-copy, .about-side{ grid-column:span 12; }
-    section{ padding:4rem 0; }
-  }
-</style>
+    /* இடது பக்கம்: லோகோ மற்றும் முக்கிய மெனு */
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 15px; /* லோகோ மற்றும் மெனுவுக்கு இடையே நெருக்கமான இடைவெளி */
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+      color: #ff9900;
+      letter-spacing: 1px;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 12px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #e0e0e0;
+      font-size: 14px;
+      transition: color 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .nav-links a:hover {
+      color: #ff9900;
+    }
+
+    /* வலது பக்கம்: ஆக்ஷன் பட்டன்கள் */
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn {
+      padding: 6px 12px;
+      font-size: 13px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 500;
+      white-space: nowrap;
+      transition: 0.2s;
+    }
+
+    .btn-download {
+      background-color: transparent;
+      color: #ffffff;
+      border: 1px solid #ffffff;
+    }
+
+    .btn-download:hover {
+      background-color: #ffffff;
+      color: #000000;
+    }
+
+    .btn-touch {
+      background-color: #ff9900;
+      color: #000000;
+      border: 1px solid #ff9900;
+    }
+
+    .btn-touch:hover {
+      background-color: #e68a00;
+    }
+  </style>
 </head>
 <body>
 
-<div class="aurora">
-  <div class="orb orb-1"></div>
-  <div class="orb orb-2"></div>
-  <div class="orb orb-3"></div>
-</div>
-<div class="noise"></div>
+  <nav class="navbar">
+    <div class="nav-left">
+      <!-- லோகோ HK -->
+      <div class="logo">HK</div>
 
-<header>
-  <div class="navbar glass">
-    <!-- LEFT -->
-    <a href="#home" class="logo">HK<span>.</span></a>
-    
-    <!-- CENTER -->
-    <nav class="links">
-      <a href="#about">About</a>
-      <a href="#work">Work</a>
-      <a href="#services">Services</a>
-      <a href="#skills">Skills</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    
-    <!-- RIGHT -->
+      <!-- 5 மெனு உருப்படிகள் -->
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#invest">Invest</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- பட்டன்கள் -->
     <div class="nav-actions">
-      <a href="resume.pdf" download class="btn btn-cv small magnetic"><i class="fas fa-file-pdf"></i> <span class="label-full">Download CV</span></a>
-      <a href="#contact" class="btn btn-primary magnetic">Get In Touch</a>
+      <a href="#download" class="btn btn-download">Download</a>
+      <a href="#get-in-touch" class="btn btn-touch">Get in Touch</a>
     </div>
-  </div>
-</header>
+  </nav>
 
-<section id="home" class="hero">
-  <div class="wrap">
-    <div class="reveal">
-      <p class="kicker">Hey, I'm</p>
-      <h1>HARISH<br>KUMAR<span class="grad-text">.</span></h1>
-      <p class="role grad-text">Graphic Design • Branding • Print • Social Media</p>
-      <p class="lede">Helping design studios, print agencies, and digital brands build standout visual identities.</p>
-      <div class="cta-row">
-        <a href="#work" class="btn btn-primary magnetic">View My Work <span class="arrow">→</span></a>
-        <a href="#contact" class="btn btn-ghost magnetic">Get In Touch <span class="arrow">→</span></a>
-        <a href="resume.pdf" download class="btn btn-cv magnetic"><i class="fas fa-file-pdf"></i> Download CV</a>
-      </div>
-      <span class="status-pill glass"><span class="dot"></span> Open to Opportunities — India &amp; Dubai</span>
-    </div>
-  </div>
-
-  <!-- FLOATING VERTICAL SOCIAL DOCK -->
-  <div class="social-dock glass">
-    <a href="https://wa.me/916384651054" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-    <a href="https://www.linkedin.com/in/harish-kumar-b3790934b" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-    <a href="https://www.behance.net/harishkumar639" target="_blank" rel="noopener noreferrer" aria-label="Behance"><i class="fa-brands fa-behance"></i></a>
-    <a href="https://www.instagram.com/___njr__01" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=hariskumar10njr2005@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
-  </div>
-</section>
-
-<section id="about">
-  <div class="wrap grid-12">
-    <div class="about-copy reveal">
-      <span class="eyebrow c-violet">01 — About</span>
-      <h2 style="font-size:clamp(1.8rem,3.6vw,2.6rem); margin-bottom:1.6rem; max-width:640px; color:#fff;">Design philosophy built on clarity, craft and quiet confidence.</h2>
-      <p>I'm Harish Kumar, a self-motivated Graphic Designer at the very start of my professional journey. I turn ideas into visual concepts through branding, digital design and print — built on self-learning, deliberate practice and personal concept work.</p>
-      <p>My focus is on clean execution: strong typography, intentional composition and design that communicates without noise. I'm currently looking for a place to learn, contribute and grow alongside a creative team.</p>
-    </div>
-    <div class="about-side reveal">
-      <div class="info-card glass"><div class="label">Focus</div><div class="value">Print · Digital · Branding</div></div>
-      <div class="info-card glass"><div class="label">Availability</div><div class="value">Open to Opportunities</div></div>
-      <div class="info-card glass"><div class="label">Based In</div><div class="value">India — Open to India &amp; Dubai</div></div>
-      <div class="info-card glass"><div class="label">Toolkit</div><div class="value">Illustrator · Photoshop · Figma</div></div>
-    </div>
-  </div>
-</section>
-
-<section id="work">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <div>
-        <span class="eyebrow c-cyan">02 — Selected Work</span>
-        <h2 style="color:#fff;">Projects That Show My<br>Design Thinking</h2>
-      </div>
-      <p>A collection of personal concept projects created to demonstrate creativity, craft and problem-solving.</p>
-    </div>
-
-    <div class="work-grid">
-      <article class="project-card glass reveal">
-        <div class="project-visual" style="background:linear-gradient(135deg,#7C5CFF,#FF6B3A);"><span>EMBER &amp; SPICE</span></div>
-        <div class="project-body">
-          <span class="concept-tag">Personal Concept · 01</span>
-          <h3>Ember &amp; Spice — Restaurant Branding</h3>
-          <p>A modern restaurant branding concept exploring identity design, typography, packaging and promotional materials for a Dubai-inspired Indian grill restaurant.</p>
-          <p class="tools">Illustrator · Photoshop</p>
-          <a href="#" class="view-link">View Project <span class="arrow">→</span></a>
-        </div>
-      </article>
-
-      <article class="project-card glass reveal">
-        <div class="project-visual" style="background:linear-gradient(135deg,#0a0a0f,#31E7E0);"><span>NORTHFOLD</span></div>
-        <div class="project-body">
-          <span class="concept-tag">Personal Concept · 02</span>
-          <h3>Brand Identity Concept</h3>
-          <p>A fictional brand identity system exploring logo construction, guidelines, business cards, packaging and social presence.</p>
-          <p class="tools">Illustrator · Figma</p>
-          <a href="#" class="view-link">View Project <span class="arrow">→</span></a>
-        </div>
-      </article>
-
-      <article class="project-card glass reveal">
-        <div class="project-visual" style="background:linear-gradient(135deg,#FF6B3A,#7C5CFF);"><span>#MADEBYHAND</span></div>
-        <div class="project-body">
-          <span class="concept-tag">Personal Concept · 03</span>
-          <h3>Social Media Campaign</h3>
-          <p>A fictional campaign built around Instagram posts, promotional creatives and digital advertising, focused on bold typography and composition.</p>
-          <p class="tools">Photoshop · Illustrator</p>
-          <a href="#" class="view-link">View Project <span class="arrow">→</span></a>
-        </div>
-      </article>
-
-      <article class="project-card glass reveal">
-        <div class="project-visual" style="background:linear-gradient(135deg,#0a0a0f,#7C5CFF);"><span>PRINT SET</span></div>
-        <div class="project-body">
-          <span class="concept-tag">Personal Concept · 04</span>
-          <h3>Print Design Collection</h3>
-          <p>A set of brochures, flyers, posters and packaging built to practice grid systems, print-ready layout and typographic hierarchy.</p>
-          <p class="tools">InDesign · Illustrator</p>
-          <a href="#" class="view-link">View Project <span class="arrow">→</span></a>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section id="services">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <div>
-        <span class="eyebrow c-orange">03 — What I Can Design</span>
-        <h2 style="color:#fff;">Design Solutions Built<br>For Growing Brands</h2>
-      </div>
-    </div>
-    <div class="services-grid">
-      <div class="service-card glass reveal">
-        <div class="service-icon"><i class="fa-solid fa-swatchbook"></i></div>
-        <h3>Branding &amp; Identity</h3>
-        <p>Logo systems, brand guidelines and visual identity that give a business a clear, consistent voice.</p>
-      </div>
-      <div class="service-card glass reveal">
-        <div class="service-icon"><i class="fa-solid fa-print"></i></div>
-        <h3>Print &amp; Editorial Design</h3>
-        <p>Packaging, brochures, posters and catalogs — grid-driven, print-ready and built to hold up in hand.</p>
-      </div>
-      <div class="service-card glass reveal">
-        <div class="service-icon"><i class="fa-solid fa-layer-group"></i></div>
-        <h3>Digital &amp; Motion Graphics</h3>
-        <p>Social media creatives, web banners and UI/ad assets designed for scroll-stopping clarity.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="skills">
-  <div class="wrap grid-12">
-    <div style="grid-column:span 4;" class="reveal">
-      <span class="eyebrow c-violet">04 — Toolkit</span>
-      <h2 style="font-size:2rem; color:#fff;">My Design Toolkit</h2>
-      <p style="color:var(--fg-dim); margin-top:1rem;">Always learning. Always experimenting. Always improving.</p>
-    </div>
-    <div style="grid-column:span 8; display:grid; grid-template-columns:1fr 1fr; gap:3rem;" class="reveal">
-      <div>
-        <p class="eyebrow" style="color:var(--fg-dim);">Design Tools</p>
-        <div class="skill-row"><span>Adobe Illustrator</span><div class="bar-wrap"><div class="bar" data-target="75"><span style="width:0%"></span></div><span class="bar-pct">0%</span></div></div>
-        <div class="skill-row"><span>Adobe Photoshop</span><div class="bar-wrap"><div class="bar" data-target="75"><span style="width:0%"></span></div><span class="bar-pct">0%</span></div></div>
-        <div class="skill-row"><span>CorelDRAW</span><div class="bar-wrap"><div class="bar" data-target="55"><span style="width:0%"></span></div><span class="bar-pct">0%</span></div></div>
-        <div class="skill-row"><span>Figma</span><div class="bar-wrap"><div class="bar" data-target="55"><span style="width:0%"></span></div><span class="bar-pct">0%</span></div></div>
-      </div>
-      <div>
-        <p class="eyebrow" style="color:var(--fg-dim);">AI-Assisted Workflow</p>
-        <div class="pill-list">
-          <span class="glass">AI-assisted design</span>
-          <span class="glass">AI image generation</span>
-          <span class="glass">AI-assisted ideation</span>
-          <span class="glass">Workflow automation</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- INFINITE TOOL TICKER -->
-    <div style="grid-column:span 12;" class="reveal">
-      <div class="ticker-wrap">
-        <div class="ticker-track" id="tickerTrack">
-          <!-- set 1 -->
-          <div class="tool-chip glass"><span class="tool-icon" style="background:#31A8FF;">Ps</span><span class="tname">Adobe Photoshop</span></div>
-          <div class="tool-chip glass"><span class="tool-icon" style="background:#FF9A00;">Ai</span><span class="tname">Adobe Illustrator</span></div>
-          <div class="tool-chip glass"><span class="tool-icon" style="background:#1B1B1B; color:#fff;">Cd</span><span class="tname">CorelDRAW</span></div>
-          <div class="tool-chip glass"><span class="tool-icon" style="background:#A259FF;">Fi</span><span class="tname">Figma</span></div>
-          <div class="tool-chip glass"><span class="tool-icon" style="background:#FF3366;">Id</span><span class="tname">Adobe InDesign</span></div>
-          <div class="tool-chip glass"><span class="tool-icon" style="background:linear-gradient(135deg,#7C5CFF,#31E7E0);">AI</span><span class="tname">AI Workflow Tools</span></div>
-          <!-- set 2 (duplicate for seamless loop) -->
-          <div class="tool-chip glass"><span class="tool-icon" style="background:#31A8FF;">Ps</span><span class="tname">Adobe Photoshop</span></div>
-          <div class="tool-chip glass"><span class="tool-icon" style="background:#FF9A00;">Ai</span><span class="tname">Adobe Illustrator</span></div>
-          <div class="tool-chip glass"><span class="tool-icon" style="background:#1B1B1B; color:#fff;">Cd</span><span class="tname">CorelDRAW</span></div>
-          <div class="tool-chip glass"><span class="tool-icon" style="background:#A259FF;">Fi</span><span class="tname">Figma</span></div>
-          <div class="tool-chip glass"><span class="tool-icon" style="background:#FF3366;">Id</span><span class="tname">Adobe InDesign</span></div>
-          <div class="tool-chip glass"><span class="tool-icon" style="background:linear-gradient(135deg,#7C5CFF,#31E7E0);">AI</span><span class="tname">AI Workflow Tools</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <span class="eyebrow c-cyan reveal">05 — Process</span>
-    <h2 class="reveal" style="font-size:2rem; margin-bottom:3rem; color:#fff;">How I Approach a Project</h2>
-    <div class="ripple-grid process-grid" id="processGrid">
-      <div class="process-step ripple-card glass reveal"><p class="num">01</p><h3>Understand</h3><p>Objective, audience and requirements.</p></div>
-      <div class="process-step ripple-card glass reveal"><p class="num">02</p><h3>Research</h3><p>References, competitors, visual direction.</p></div>
-      <div class="process-step ripple-card glass reveal"><p class="num">03</p><h3>Concept</h3><p>Sketches, moodboards, directions.</p></div>
-      <div class="process-step ripple-card glass reveal"><p class="num">04</p><h3>Design</h3><p>Build the visual system and assets.</p></div>
-      <div class="process-step ripple-card glass reveal"><p class="num">05</p><h3>Refine</h3><p>Review, improve, prepare deliverables.</p></div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <span class="eyebrow c-orange reveal">06 — Why Me</span>
-    <h2 class="reveal" style="font-size:2rem; margin-bottom:3rem; color:#fff;">Why Work With Me?</h2>
-    <div class="ripple-grid why-grid" id="whyGrid">
-      <div class="why-card ripple-card glass reveal"><h3>Fresh Perspective</h3><p>Curiosity and new ideas on every project.</p></div>
-      <div class="why-card ripple-card glass reveal"><h3>Strong Fundamentals</h3><p>Typography, hierarchy, color, communication.</p></div>
-      <div class="why-card ripple-card glass reveal"><h3>Fast Learner</h3><p>Continuously picking up new tools and skills.</p></div>
-      <div class="why-card ripple-card glass reveal"><h3>Adaptable</h3><p>Comfortable across branding, print and digital.</p></div>
-      <div class="why-card ripple-card glass reveal"><h3>AI + Design</h3><p>Modern tools in workflow, design thinking at core.</p></div>
-    </div>
-  </div>
-</section>
-
-<section id="contact">
-  <div class="wrap contact-grid">
-    <div class="reveal">
-      <span class="eyebrow c-cyan">08 — Contact</span>
-      <h2 style="font-size:2.2rem; margin-bottom:1rem; color:#fff;">Let's Create Something Great</h2>
-      <p style="color:var(--fg-dim); max-width:380px;">I'm currently looking for graphic design opportunities, internships, freelance projects and entry-level roles.</p>
-
-      <div class="badge-row">
-        <a class="badge glass" href="https://wa.me/916384651054" target="_blank" rel="noopener noreferrer">
-          <span class="icon"><i class="fa-brands fa-whatsapp"></i></span>
-          <span class="meta"><span class="label">WhatsApp</span><span class="value">+91 63846 51054</span></span>
-        </a>
-        <a class="badge glass" href="https://mail.google.com/mail/?view=cm&fs=1&to=hariskumar10njr2005@gmail.com" target="_blank" rel="noopener noreferrer">
-          <span class="icon"><i class="fa-solid fa-envelope"></i></span>
-          <span class="meta"><span class="label">Email</span><span class="value">hariskumar10njr2005@gmail.com</span></span>
-        </a>
-        <a class="badge glass" href="https://www.linkedin.com/in/harish-kumar-b3790934b" target="_blank" rel="noopener noreferrer">
-          <span class="icon"><i class="fa-brands fa-linkedin-in"></i></span>
-          <span class="meta"><span class="label">LinkedIn</span><span class="value">/in/harish-kumar</span></span>
-        </a>
-        <a class="badge glass" href="https://www.behance.net/harishkumar639" target="_blank" rel="noopener noreferrer">
-          <span class="icon"><i class="fa-brands fa-behance"></i></span>
-          <span class="meta"><span class="label">Behance</span><span class="value">behance.net/harishkumar639</span></span>
-        </a>
-        <a class="badge glass" href="https://www.instagram.com/___njr__01" target="_blank" rel="noopener noreferrer">
-          <span class="icon"><i class="fa-brands fa-instagram"></i></span>
-          <span class="meta"><span class="label">Instagram</span><span class="value">@___njr__01</span></span>
-        </a>
-      </div>
-    </div>
-
-    <form class="reveal contact-form glass" id="contactForm">
-      <div class="form-field"><label>Name</label><input type="text" required placeholder="Your name"></div>
-      <div class="form-field"><label>Email</label><input type="email" required placeholder="you@email.com"></div>
-      <div class="form-field"><label>Message</label><textarea rows="5" required placeholder="Tell me about the project..."></textarea></div>
-      <button type="submit" class="btn btn-primary magnetic" style="width:100%; justify-content:center;">Send Message <span class="arrow">→</span></button>
-    </form>
-  </div>
-</section>
-
-<footer>
-  <div class="wrap">
-    <div>
-      <p class="fname">Harish Kumar</p>
-      <p class="sub">Graphic Designer — Print · Digital · Branding</p>
-    </div>
-    <div class="foot-social">
-      <a class="glass" href="https://wa.me/916384651054" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i></a>
-      <a class="glass" href="https://www.linkedin.com/in/harish-kumar-b3790934b" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in"></i></a>
-      <a class="glass" href="https://www.behance.net/harishkumar639" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-behance"></i></a>
-      <a class="glass" href="https://www.instagram.com/___njr__01" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
-    </div>
-    <p class="sub">© 2026 Harish Kumar. All rights reserved.</p>
-  </div>
-</footer>
-
-<script>
-  // scroll reveal
-  const revealEls = document.querySelectorAll('.reveal');
-  const io = new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{
-      if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
-    });
-  }, { threshold: 0.15 });
-  revealEls.forEach(el=>io.observe(el));
-
-  // magnetic button effect
-  document.querySelectorAll('.magnetic').forEach(btn=>{
-    btn.addEventListener('mousemove', (e)=>{
-      const r = btn.getBoundingClientRect();
-      const x = e.clientX - r.left - r.width/2;
-      const y = e.clientY - r.top - r.height/2;
-      btn.style.transform = `translate(${x*0.25}px, ${y*0.35}px)`;
-    });
-    btn.addEventListener('mouseleave', ()=>{ btn.style.transform = 'translate(0,0)'; });
-  });
-
-  // ripple/wave hover effect
-  function attachRipple(gridId){
-    const grid = document.getElementById(gridId);
-    if(!grid) return;
-    const cards = Array.from(grid.querySelectorAll('.ripple-card'));
-    cards.forEach((card, i)=>{
-      card.addEventListener('mouseenter', ()=>{
-        cards.forEach((c, j)=>{
-          const dist = Math.abs(i - j);
-          const factor = Math.max(0, 1 - dist * 0.42);
-          c.style.setProperty('--r', factor.toFixed(2));
-        });
-      });
-      grid.addEventListener('mouseleave', ()=>{
-        cards.forEach(c=> c.style.setProperty('--r', 0));
-      });
-    });
-  }
-  attachRipple('processGrid');
-  attachRipple('whyGrid');
-
-  // skill bars
-  const skillBars = document.querySelectorAll('.bar[data-target]');
-  const skillIO = new IntersectionObserver((entries)=>{
-    entries.forEach(entry=>{
-      if(!entry.isIntersecting) return;
-      const bar = entry.target;
-      const target = parseInt(bar.getAttribute('data-target'), 10);
-      const fill = bar.querySelector('span');
-      const pctLabel = bar.parentElement.querySelector('.bar-pct');
-      fill.style.width = target + '%';
-      const duration = 1400;
-      const start = performance.now();
-      function tick(now){
-        const progress = Math.min((now - start) / duration, 1);
-        const eased = 1 - Math.pow(1 - progress, 3);
-        const current = Math.round(eased * target);
-        if(pctLabel) pctLabel.textContent = current + '%';
-        if(progress < 1) requestAnimationFrame(tick);
-      }
-      requestAnimationFrame(tick);
-      skillIO.unobserve(bar);
-    });
-  }, { threshold: 0.4 });
-  skillBars.forEach(bar=>skillIO.observe(bar));
-
-  // contact form
-  const form = document.getElementById('contactForm');
-  form.addEventListener('submit', function(e){
-    e.preventDefault();
-    const btn = form.querySelector('button[type="submit"]');
-    const original = btn.innerHTML;
-    btn.innerHTML = 'Message Sent ✓';
-    btn.style.opacity = '0.7';
-    setTimeout(()=>{ btn.innerHTML = original; btn.style.opacity = '1'; form.reset(); }, 2200);
-  });
-</script>
 </body>
 </html>
