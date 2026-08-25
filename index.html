@@ -58,15 +58,15 @@
   .eyebrow{ font-size:.72rem; letter-spacing:.22em; text-transform:uppercase; font-weight:600; margin-bottom:1.1rem; display:inline-block; }
   .eyebrow.c-violet{color:var(--violet);} .eyebrow.c-cyan{color:var(--cyan);} .eyebrow.c-orange{color:var(--orange);}
 
-  /* NAV */
+  /* NAV (Laptop Style Default) */
   header{ position:fixed; top:16px; left:0; right:0; z-index:100; }
   header .navbar{
     max-width:1180px; margin:0 auto; display:flex; align-items:center; justify-content:space-between;
-    padding:.8rem 1.4rem; border-radius:999px; gap:1rem;
+    padding:.9rem 1.2rem .9rem 1.6rem; border-radius:999px; gap:1rem;
   }
   .logo{font-family:'Syne',sans-serif; font-weight:700; font-size:1.1rem;}
   .logo span{color:var(--orange);}
-  nav.links{display:flex; gap:1.8rem; font-size:.82rem; letter-spacing:.05em; text-transform:uppercase; color:var(--fg-dim);}
+  nav.links{display:flex; gap:2rem; font-size:.82rem; letter-spacing:.05em; text-transform:uppercase; color:var(--fg-dim);}
   nav.links a{position:relative; transition:color .3s;}
   nav.links a:hover{color:#fff;}
   .nav-actions{display:flex; align-items:center; gap:.6rem;}
@@ -111,7 +111,7 @@
 
   /* FLOATING VERTICAL SOCIAL DOCK */
   .social-dock{
-    position:absolute; right:1.5rem; top:50%; transform:translateY(-50%);
+    position:absolute; right:2.4vw; top:50%; transform:translateY(-50%);
     display:flex; flex-direction:column; gap:.7rem; padding:.9rem .6rem; z-index:20;
   }
   .social-dock a{
@@ -153,7 +153,7 @@
   .project-body{ padding:.4rem 1.6rem 1.8rem;}
   .concept-tag{ font-size:.68rem; letter-spacing:.14em; text-transform:uppercase; color:var(--cyan); font-weight:600; display:block; margin-bottom:.6rem;}
   .project-body h3{font-size:1.25rem; margin-bottom:.5rem;}
-  .project-body p{color:var(--fg-dim); font-size:.92rem; margin-bottom:1rem;}
+  .project-body p{color:var(--fg-dim); font-size:.92rem;}
   .tools{font-size:.72rem; letter-spacing:.08em; text-transform:uppercase; color:var(--fg-dim); opacity:.6; margin-bottom:1rem;}
   .view-link{ font-size:.8rem; font-weight:600; display:inline-flex; align-items:center; gap:.4rem; color:#fff;}
   .view-link .arrow{transition:transform .3s;}
@@ -259,63 +259,71 @@
   .reveal{opacity:0; transform:translateY(24px); transition:opacity .8s ease, transform .8s cubic-bezier(.2,.8,.2,1);}
   .reveal.in{opacity:1; transform:translateY(0);}
 
-  /* RESPONSIVE PERFECTION FOR MOBILE (MATCHING LAPTOP LAYOUT) */
+  /* MOBILE EXACT LAYOUT ADJUSTMENT */
   @media (max-width:860px){
-    header{ top:8px; }
+    header{ top:8px; left:3vw; right:3vw; }
     header .navbar{
-      padding:.6rem .9rem;
-      overflow-x:auto;
-      scrollbar-width:none;
+      display:flex;
+      flex-direction:column;
+      padding:.7rem 1rem;
+      border-radius:20px;
+      gap:.6rem;
     }
-    header .navbar::-webkit-scrollbar{ display:none; }
     
-    /* Top Menu Links Visible Exactly Like Laptop */
+    .nav-top-row{
+      width:100%;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+
     nav.links{
       display:flex !important;
-      gap:1rem;
-      font-size:.72rem;
-      white-space:nowrap;
+      width:100%;
+      justify-content:space-around;
+      gap:.4rem;
+      font-size:.68rem;
+      font-weight:700;
+      border-top:1px solid rgba(255,255,255,0.06);
+      padding-top:.5rem;
     }
-    
+    nav.links a{ color:var(--fg); }
+
     .nav-actions .btn-primary{
-      padding:.6rem 1rem;
-      font-size:.74rem;
+      padding:.55rem .95rem;
+      font-size:.75rem;
     }
     .nav-actions .btn-cv{
-      padding:.6rem .8rem;
+      padding:.55rem .8rem;
     }
     .nav-actions .btn-cv span.label-full{ display:none; }
 
-    /* Hero Text & Spacing Adjustment */
-    .hero{ padding-top:100px; }
-    .hero .wrap{ padding-right:4.5rem; } /* Gives clean space so text won't touch side icons */
-    .hero h1{ font-size:clamp(2.4rem, 11vw, 3.8rem); }
-    .hero .role{ font-size:1.1rem; }
-    .hero p.lede{ font-size:.95rem; margin:1.2rem 0 1.8rem; }
-    .cta-row{ gap:.8rem; margin-bottom:2rem; }
-    .cta-row .btn{ padding:.8rem 1.4rem; font-size:.8rem; }
+    /* HERO ADJUSTMENTS */
+    .hero{ padding-top:135px; }
+    .hero .wrap{ padding-right:3.2rem; }
+    .hero h1{ font-size:clamp(2.2rem, 9.5vw, 3.4rem); }
+    .hero .role{ font-size:1rem; }
+    .hero p.lede{ font-size:.9rem; margin:1rem 0 1.5rem; }
+    .cta-row{ gap:.7rem; margin-bottom:1.8rem; }
+    .cta-row .btn{ padding:.75rem 1.2rem; font-size:.78rem; width:100%; justify-content:center; }
 
-    /* Side Dock Fixed Snug to Right Screen Edge */
+    /* SIDE DOCK FIXED TO RIGHT BORDER */
     .social-dock{
-      right:8px;
-      padding:.6rem .35rem;
-      gap:.5rem;
-      border-radius:16px;
+      right:4px;
+      padding:.5rem .25rem;
+      gap:.4rem;
+      border-radius:12px;
     }
     .social-dock a{
-      width:34px;
-      height:34px;
-      font-size:.85rem;
+      width:30px;
+      height:30px;
+      font-size:.8rem;
     }
 
-    /* Grid Layouts */
-    .work-grid{grid-template-columns:1fr;}
-    .services-grid{grid-template-columns:1fr;}
-    .process-grid{grid-template-columns:1fr;}
-    .why-grid{grid-template-columns:1fr;}
-    .about-copy, .about-side{grid-column:span 12;}
-    .contact-grid{grid-template-columns:1fr;}
-    section{padding:4.5rem 0;}
+    /* Grids */
+    .work-grid, .services-grid, .process-grid, .why-grid, .contact-grid{ grid-template-columns:1fr; }
+    .about-copy, .about-side{ grid-column:span 12; }
+    section{ padding:4rem 0; }
   }
 </style>
 </head>
@@ -330,7 +338,13 @@
 
 <header>
   <div class="navbar glass">
-    <a href="#home" class="logo">HK<span>.</span></a>
+    <div class="nav-top-row">
+      <a href="#home" class="logo">HK<span>.</span></a>
+      <div class="nav-actions">
+        <a href="resume.pdf" download class="btn btn-cv small magnetic"><i class="fas fa-file-pdf"></i> <span class="label-full">Download CV</span></a>
+        <a href="#contact" class="btn btn-primary magnetic">Get In Touch</a>
+      </div>
+    </div>
     <nav class="links">
       <a href="#about">About</a>
       <a href="#work">Work</a>
@@ -338,10 +352,6 @@
       <a href="#skills">Skills</a>
       <a href="#contact">Contact</a>
     </nav>
-    <div class="nav-actions">
-      <a href="resume.pdf" download class="btn btn-cv small magnetic"><i class="fas fa-file-pdf"></i> <span class="label-full">Download CV</span></a>
-      <a href="#contact" class="btn btn-primary magnetic">Get In Touch</a>
-    </div>
   </div>
 </header>
 
@@ -652,7 +662,7 @@
     btn.addEventListener('mouseleave', ()=>{ btn.style.transform = 'translate(0,0)'; });
   });
 
-  // ripple/wave hover effect for Process + Why Me grids
+  // ripple/wave hover effect
   function attachRipple(gridId){
     const grid = document.getElementById(gridId);
     if(!grid) return;
@@ -673,7 +683,7 @@
   attachRipple('processGrid');
   attachRipple('whyGrid');
 
-  // scroll-triggered animated skill bars with percentage count-up
+  // skill bars
   const skillBars = document.querySelectorAll('.bar[data-target]');
   const skillIO = new IntersectionObserver((entries)=>{
     entries.forEach(entry=>{
