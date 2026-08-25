@@ -62,28 +62,14 @@
   header{ position:fixed; top:16px; left:0; right:0; z-index:100; }
   header .navbar{
     max-width:1180px; margin:0 auto; display:flex; align-items:center; justify-content:space-between;
-    padding:.9rem 1.2rem .9rem 1.6rem; border-radius:999px; gap:1rem;
+    padding:.8rem 1.4rem; border-radius:999px; gap:1rem;
   }
   .logo{font-family:'Syne',sans-serif; font-weight:700; font-size:1.1rem;}
   .logo span{color:var(--orange);}
-  nav.links{display:flex; gap:2rem; font-size:.82rem; letter-spacing:.05em; text-transform:uppercase; color:var(--fg-dim);}
+  nav.links{display:flex; gap:1.8rem; font-size:.82rem; letter-spacing:.05em; text-transform:uppercase; color:var(--fg-dim);}
   nav.links a{position:relative; transition:color .3s;}
   nav.links a:hover{color:#fff;}
   .nav-actions{display:flex; align-items:center; gap:.6rem;}
-
-  .menu-btn{
-    display:none; background:transparent; border:none; color:#fff; font-size:1.3rem;
-    cursor:pointer; padding:0.4rem; z-index:101;
-  }
-
-  .mobile-menu{
-    display:none; position:fixed; top:75px; left:6vw; right:6vw;
-    background:rgba(15,15,23,0.95); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px);
-    border:1px solid var(--border); border-radius:18px; padding:1.5rem;
-    flex-direction:column; gap:1.2rem; text-align:center; z-index:99;
-  }
-  .mobile-menu.open{ display:flex; }
-  .mobile-menu a{ font-size:1.05rem; font-weight:600; text-transform:uppercase; color:var(--fg); letter-spacing:.05em; }
 
   /* BUTTONS */
   .btn{
@@ -125,7 +111,7 @@
 
   /* FLOATING VERTICAL SOCIAL DOCK */
   .social-dock{
-    position:absolute; right:2.4vw; top:50%; transform:translateY(-50%);
+    position:absolute; right:1.5rem; top:50%; transform:translateY(-50%);
     display:flex; flex-direction:column; gap:.7rem; padding:.9rem .6rem; z-index:20;
   }
   .social-dock a{
@@ -213,7 +199,7 @@
   }
   .tool-chip span.tname{font-size:.86rem; color:var(--fg);}
 
-  /* PROCESS + WHY (ripple hover) */
+  /* PROCESS + WHY */
   .ripple-grid{ display:grid; gap:1.6rem; }
   .process-grid{ grid-template-columns:repeat(5,1fr); }
   .why-grid{ grid-template-columns:repeat(5,1fr); }
@@ -273,40 +259,63 @@
   .reveal{opacity:0; transform:translateY(24px); transition:opacity .8s ease, transform .8s cubic-bezier(.2,.8,.2,1);}
   .reveal.in{opacity:1; transform:translateY(0);}
 
-  /* RESPONSIVE CSS */
+  /* RESPONSIVE PERFECTION FOR MOBILE (MATCHING LAPTOP LAYOUT) */
   @media (max-width:860px){
-    nav.links{display:none;}
-    .menu-btn{display:block;}
-    .work-grid{grid-template-columns:1fr;}
-    .services-grid{grid-template-columns:1fr;}
-    .process-grid{grid-template-columns:repeat(2,1fr); row-gap:2rem;}
-    .why-grid{grid-template-columns:repeat(2,1fr);}
-    .about-copy, .about-side{grid-column:span 12;}
-    .contact-grid{grid-template-columns:1fr;}
-    section{padding:5rem 0;}
-    header{top:10px;}
-    .nav-actions .btn-cv span.label-full{display:none;}
+    header{ top:8px; }
+    header .navbar{
+      padding:.6rem .9rem;
+      overflow-x:auto;
+      scrollbar-width:none;
+    }
+    header .navbar::-webkit-scrollbar{ display:none; }
     
-    /* Mobile Social Dock Adjustment */
+    /* Top Menu Links Visible Exactly Like Laptop */
+    nav.links{
+      display:flex !important;
+      gap:1rem;
+      font-size:.72rem;
+      white-space:nowrap;
+    }
+    
+    .nav-actions .btn-primary{
+      padding:.6rem 1rem;
+      font-size:.74rem;
+    }
+    .nav-actions .btn-cv{
+      padding:.6rem .8rem;
+    }
+    .nav-actions .btn-cv span.label-full{ display:none; }
+
+    /* Hero Text & Spacing Adjustment */
+    .hero{ padding-top:100px; }
+    .hero .wrap{ padding-right:4.5rem; } /* Gives clean space so text won't touch side icons */
+    .hero h1{ font-size:clamp(2.4rem, 11vw, 3.8rem); }
+    .hero .role{ font-size:1.1rem; }
+    .hero p.lede{ font-size:.95rem; margin:1.2rem 0 1.8rem; }
+    .cta-row{ gap:.8rem; margin-bottom:2rem; }
+    .cta-row .btn{ padding:.8rem 1.4rem; font-size:.8rem; }
+
+    /* Side Dock Fixed Snug to Right Screen Edge */
     .social-dock{
-      right:1.2vw;
-      padding:.6rem .4rem;
+      right:8px;
+      padding:.6rem .35rem;
       gap:.5rem;
+      border-radius:16px;
     }
     .social-dock a{
-      width:36px;
-      height:36px;
-      font-size:.9rem;
+      width:34px;
+      height:34px;
+      font-size:.85rem;
     }
-  }
 
-  @media (max-width:480px){
+    /* Grid Layouts */
+    .work-grid{grid-template-columns:1fr;}
+    .services-grid{grid-template-columns:1fr;}
     .process-grid{grid-template-columns:1fr;}
     .why-grid{grid-template-columns:1fr;}
-    .hero h1{font-size:2.8rem;}
-    .hero .role{font-size:1.05rem;}
-    .cta-row{flex-direction:column; align-items:stretch;}
-    .cta-row .btn{justify-content:center;}
+    .about-copy, .about-side{grid-column:span 12;}
+    .contact-grid{grid-template-columns:1fr;}
+    section{padding:4.5rem 0;}
   }
 </style>
 </head>
@@ -332,17 +341,7 @@
     <div class="nav-actions">
       <a href="resume.pdf" download class="btn btn-cv small magnetic"><i class="fas fa-file-pdf"></i> <span class="label-full">Download CV</span></a>
       <a href="#contact" class="btn btn-primary magnetic">Get In Touch</a>
-      <button class="menu-btn" id="menuToggle" aria-label="Toggle Menu"><i class="fa-solid fa-bars"></i></button>
     </div>
-  </div>
-  
-  <!-- Mobile Dropdown Menu -->
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="#about" class="mob-link">About</a>
-    <a href="#work" class="mob-link">Work</a>
-    <a href="#services" class="mob-link">Services</a>
-    <a href="#skills" class="mob-link">Skills</a>
-    <a href="#contact" class="mob-link">Contact</a>
   </div>
 </header>
 
@@ -633,32 +632,6 @@
 </footer>
 
 <script>
-  // Mobile Hamburger Toggle
-  const menuToggle = document.getElementById('menuToggle');
-  const mobileMenu = document.getElementById('mobileMenu');
-  const mobLinks = document.querySelectorAll('.mob-link');
-
-  menuToggle.addEventListener('click', () => {
-    mobileMenu.classList.toggle('open');
-    const icon = menuToggle.querySelector('i');
-    if (mobileMenu.classList.contains('open')) {
-      icon.classList.remove('fa-bars');
-      icon.classList.add('fa-xmark');
-    } else {
-      icon.classList.remove('fa-xmark');
-      icon.classList.add('fa-bars');
-    }
-  });
-
-  mobLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      mobileMenu.classList.remove('open');
-      const icon = menuToggle.querySelector('i');
-      icon.classList.remove('fa-xmark');
-      icon.classList.add('fa-bars');
-    });
-  });
-
   // scroll reveal
   const revealEls = document.querySelectorAll('.reveal');
   const io = new IntersectionObserver((entries)=>{
@@ -725,7 +698,7 @@
   }, { threshold: 0.4 });
   skillBars.forEach(bar=>skillIO.observe(bar));
 
-  // contact form (static file — no backend; shows confirmation state)
+  // contact form
   const form = document.getElementById('contactForm');
   form.addEventListener('submit', function(e){
     e.preventDefault();
